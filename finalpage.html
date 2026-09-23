@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Your Chennai Mobile Hub order confirmation.">
+  <title>Order confirmed — Chennai Mobile Hub</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="confirmation" data-auth-required="true">
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a class="brand" href="phone.html" aria-label="Chennai Mobile Hub store">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span class="brand-name">Chennai Mobile Hub</span>
+      </a>
+      <div class="nav-links">
+        <a href="phone.html">Shop</a>
+        <span class="nav-user" data-auth-only><span>Hello,</span> <strong data-user></strong></span>
+        <button class="button ghost" type="button" data-logout data-auth-only>Sign out</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="confirmation-wrap container">
+    <section class="confirmation-card" aria-labelledby="confirmation-title">
+      <div id="confirmationContent" hidden>
+        <div class="confirmation-icon" aria-hidden="true">✓</div>
+        <p class="eyebrow">Thank you for shopping with us</p>
+        <h1 id="confirmation-title">Order confirmed!</h1>
+        <p>Your order is safely recorded. Keep the order ID below for your reference.</p>
+
+        <div class="order-summary">
+          <h2>Order summary</h2>
+          <dl>
+            <dt>Order ID</dt>
+            <dd id="orderId">—</dd>
+            <dt>Placed on</dt>
+            <dd id="orderDate">—</dd>
+            <dt>Product</dt>
+            <dd id="productName">—</dd>
+            <dt>Quantity</dt>
+            <dd id="productQty">—</dd>
+            <dt>Total</dt>
+            <dd id="productTotal">—</dd>
+            <dt>Customer</dt>
+            <dd id="customerName">—</dd>
+            <dt>Shipping address</dt>
+            <dd id="shippingAddress">—</dd>
+          </dl>
+        </div>
+
+        <div class="actions">
+          <a class="button" href="phone.html">Continue shopping</a>
+        </div>
+      </div>
+
+      <div id="confirmationEmpty" class="empty-state" hidden>
+        We could not find that order. Return to the shop to start a new order.
+        <div class="actions actions-spaced">
+          <a class="button" href="phone.html">Back to shop</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sign in to Chennai Mobile Hub and shop mobile phones.">
+  <title>Sign in — Chennai Mobile Hub</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="login">
+  <main class="auth-page">
+    <section class="auth-visual" aria-labelledby="welcome-title">
+      <div class="auth-visual-content">
+        <a class="brand" href="index.html" aria-label="Chennai Mobile Hub home">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <span class="brand-name">Chennai Mobile Hub</span>
+        </a>
+        <div class="auth-spacer" aria-hidden="true"></div>
+        <p class="eyebrow">Your next phone starts here</p>
+        <h1 id="welcome-title">Technology that feels like you.</h1>
+        <p>Discover practical classics, flagship devices, and a few wonderfully unexpected phones — all in one friendly store.</p>
+        <div class="feature-row" aria-label="Store benefits">
+          <span class="feature-pill">Curated collection</span>
+          <span class="feature-pill">Simple checkout</span>
+          <span class="feature-pill">Order tracking</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-panel" aria-labelledby="login-title">
+      <div class="auth-card">
+        <p class="eyebrow">Welcome back</p>
+        <h2 id="login-title">Sign in</h2>
+        <p>Use your account to browse the collection and place an order.</p>
+
+        <form id="loginForm" class="form-stack" novalidate>
+          <div class="field">
+            <label for="loginEmail">Email address</label>
+            <input id="loginEmail" name="email" type="email" autocomplete="email" required>
+            <span class="field-error" data-error-for="email" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" name="password" type="password" autocomplete="current-password" required>
+            <span class="field-error" data-error-for="password" aria-live="polite"></span>
+          </div>
+          <p id="loginMessage" class="form-message" role="alert" aria-live="polite"></p>
+          <button class="button full-width" type="submit">Sign in</button>
+        </form>
+
+        <p class="form-footer">New here? <a href="registration.html">Create an account</a></p>
+      </div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

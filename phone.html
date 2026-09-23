@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse the Chennai Mobile Hub phone collection.">
+  <title>Shop phones — Chennai Mobile Hub</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="products" data-auth-required="true">
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a class="brand" href="phone.html" aria-label="Chennai Mobile Hub store">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span class="brand-name">Chennai Mobile Hub</span>
+      </a>
+      <div class="nav-links">
+        <a href="phone.html">Shop</a>
+        <span class="nav-user" data-auth-only><span>Hello,</span> <strong data-user></strong></span>
+        <button class="button ghost" type="button" data-logout data-auth-only>Sign out</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro container" aria-labelledby="catalog-title">
+      <p class="eyebrow">The collection</p>
+      <h1 id="catalog-title">Find your next everyday essential.</h1>
+      <p>From dependable classics to modern flagships, choose a phone that fits the way you live.</p>
+    </section>
+
+    <section class="catalog container" aria-labelledby="catalog-title">
+      <div class="catalog-toolbar">
+        <p id="productCount">Loading products…</p>
+        <a class="button secondary" href="Booking.html">Start an order</a>
+      </div>
+      <div id="productGrid" class="product-grid" aria-live="polite">
+        <div class="loading-grid" aria-label="Loading products"></div>
+      </div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
