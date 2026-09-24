@@ -1,0 +1,14 @@
+{
+  "name": "chennai-mobile-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A mobile storefront with a Node.js API, local product images, and a complete checkout flow.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node --check server.js && node --check app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

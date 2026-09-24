@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Complete your Chennai Mobile Hub order.">
+  <title>Checkout — Chennai Mobile Hub</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="checkout" data-auth-required="true">
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a class="brand" href="phone.html" aria-label="Chennai Mobile Hub store">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span class="brand-name">Chennai Mobile Hub</span>
+      </a>
+      <div class="nav-links">
+        <a href="phone.html">Back to shop</a>
+        <span class="nav-user" data-auth-only><span>Hello,</span> <strong data-user></strong></span>
+        <button class="button ghost" type="button" data-logout data-auth-only>Sign out</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro container" aria-labelledby="checkout-title">
+      <p class="eyebrow">Almost there</p>
+      <h1 id="checkout-title">Complete your order.</h1>
+      <p>Choose your product, add delivery details, and review the total before confirming.</p>
+    </section>
+
+    <section class="checkout-layout container">
+      <aside class="panel order-product" aria-labelledby="selectedProductName">
+        <div id="selectedProductArt" class="product-art" aria-hidden="true">📱</div>
+        <h2 id="selectedProductName">Choose a product</h2>
+        <p id="selectedProductDescription">Select a product to see its details.</p>
+        <div class="order-price-row">
+          <span>Unit price</span>
+          <strong id="selectedProductPrice">—</strong>
+        </div>
+        <div class="quantity-wrap field">
+          <label for="quantity">Quantity</label>
+          <input id="quantity" name="quantity" type="number" min="1" max="10" value="1" required form="checkoutForm">
+        </div>
+        <div class="summary-box" aria-live="polite">
+          <div class="summary-row total">
+            <span>Order total</span>
+            <strong id="orderTotal">—</strong>
+          </div>
+        </div>
+      </aside>
+
+      <div class="panel">
+        <h2>Delivery details</h2>
+        <form id="checkoutForm" class="form-stack" novalidate>
+          <div class="field">
+            <label for="productId">Product</label>
+            <select id="productId" name="productId" required>
+              <option value="">Loading products…</option>
+            </select>
+            <span class="field-error" data-error-for="productId" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="customerName">Full name</label>
+            <input id="customerName" name="customerName" type="text" autocomplete="name" minlength="2" maxlength="80" required>
+            <span class="field-error" data-error-for="customerName" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <span class="field-error" data-error-for="email" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="10 to 15 digits" required>
+            <span class="field-error" data-error-for="phone" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="address">Shipping address</label>
+            <textarea id="address" name="address" autocomplete="street-address" minlength="10" maxlength="300" required></textarea>
+            <span class="field-error" data-error-for="address" aria-live="polite"></span>
+          </div>
+          <p id="checkoutMessage" class="form-message" role="alert" aria-live="polite"></p>
+          <button class="button full-width" type="submit">Confirm order</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
